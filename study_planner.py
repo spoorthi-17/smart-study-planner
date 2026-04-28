@@ -18,6 +18,16 @@ time_slots = ["Morning", "Afternoon", "Evening"]
 
 print("\nYour Smart Timetable:\n")
 
+plan_output = ""
+
 for i, (pr, sub, hr) in enumerate(subjects):
-    slot = time_slots[i % 3]   # rotates between Morning, Afternoon, Evening
-    print(f"{slot}: Study {sub} for {hr} hours (Priority {pr})")
+    slot = time_slots[i % 3]
+    line = f"{slot}: Study {sub} for {hr} hours (Priority {pr})"
+    print(line)
+    plan_output += line + "\n"
+
+# Save to file
+with open("study_plan.txt", "w") as file:
+    file.write(plan_output)
+
+print("\n✅ Study plan saved to study_plan.txt")
