@@ -2,16 +2,30 @@ print("Welcome to Smart Study Planner")
 
 subjects = []
 
-n = int(input("How many subjects do you have? "))
+try:
+    n = int(input("How many subjects do you have? "))
+except ValueError:
+    print("❌ Please enter a valid number")
+    exit()
 
 for i in range(n):
     sub = input("Enter subject name: ")
-    hr = int(input(f"How many hours for {sub}? "))
-    pr = int(input(f"Enter priority for {sub} (1-High, 2-Medium, 3-Low): "))
     
+    try:
+        hr = int(input(f"How many hours for {sub}? "))
+        pr = int(input(f"Enter priority for {sub} (1-High, 2-Medium, 3-Low): "))
+        
+        if pr not in [1, 2, 3]:
+            print("❌ Invalid priority! Setting default = 3")
+            pr = 3
+            
+    except ValueError:
+        print("❌ Invalid input! Using default values")
+        hr = 1
+        pr = 3
+
     subjects.append((pr, sub, hr))
 
-# Sort by priority
 subjects.sort()
 
 time_slots = ["Morning", "Afternoon", "Evening"]
@@ -26,7 +40,6 @@ for i, (pr, sub, hr) in enumerate(subjects):
     print(line)
     plan_output += line + "\n"
 
-# Save to file
 with open("study_plan.txt", "w") as file:
     file.write(plan_output)
 
