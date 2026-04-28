@@ -1,20 +1,26 @@
 # Smart Study Planner
 
-## Description
-This is a Python-based smart study planner that helps students organize their subjects based on priority and study hours.
+## 📌 Description
+A Python-based application that generates a smart study timetable based on subject priority, study hours, and time slots.
 
-## Features
-- Add subjects
-- Assign study hours
-- Set priority (High, Medium, Low)
-- Generates timetable with time slots (Morning, Afternoon, Evening)
+## 🚀 Features
+- Add subjects with study hours
+- Assign priority levels (High, Medium, Low)
+- Automatically sorts subjects based on priority
+- Generates a structured timetable
+- Saves study plan to a file
 
-## Technologies Used
+## 🛠 Technologies Used
 - Python
 
-## How to Run
+## ▶️ How to Run
 1. Install Python
-2. Run: python study_planner.py
+2. Run the program:
+   python study_planner.py
 
-## Author
+## 📂 Output
+- Displays timetable in terminal
+- Saves plan in `study_plan.txt`
+
+## 👩‍💻 Author
 Spoorthi
